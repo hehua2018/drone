@@ -2,4 +2,4 @@ pipeline:
   build:
     image: centos
     commands:
-      - yum install vim 
+      - yum install vim  -y
