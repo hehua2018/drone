@@ -1,5 +1,26 @@
+workspace:
+  base: /go
+  path: src/github.com/hehua2018/drone
+
 pipeline:
   build:
-    image: centos
+    image: golang:1.9
     commands:
-      - yum install vim  -y
+      - pwd
+      - go env
+      - go version
+      - go build
+
+  publish:
+      image: plugins/docker
+      registry: https://index.docker.io/v1/ # 仓库
+      repo: hexiaoshi520/golang_base # docker仓库地址
+      secrets: [ docker_username, docker_password ]
+      tags:
+        - latest
+
+  deploy:
+      image: centos
+      commands:
+      -  yum install vim -y 
+
