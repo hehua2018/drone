@@ -24,7 +24,7 @@ pipeline:
       host: 142.11.205.231
       username: root
       port: 22
-      secrets: [ Onxyia!@#456 ]
+      secrets: [ user_password ]
       script:
         - cd /root/app
         - docker-compose pull nginx
