@@ -19,8 +19,13 @@ pipeline:
       tags:
         - latest
 
-  deploy:
-      image: centos
-      commands:
-      -  yum install vim -y 
-
+   deploy:
+      image: appleboy/drone-ssh
+      host: 142.11.205.231
+      username: root
+      port: 22
+      secrets: [ Onxyia!@#456 ]
+      script:
+        - cd /root/app
+        - docker-compose pull nginx
+        - docker-compose up
