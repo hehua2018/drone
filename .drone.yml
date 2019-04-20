@@ -10,12 +10,14 @@ pipeline:
       - go env
       - go version
       - go build
+      - date
 
   publish:
       image: plugins/docker
       registry: https://index.docker.io/v1/ # 仓库
       repo: hexiaoshi520/golang_base # docker仓库地址
       secrets: [ docker_username, docker_password ]
+      tags: ${DRONE_COMMIT_BRANCH}
 
   deploy:
       image: appleboy/drone-ssh
