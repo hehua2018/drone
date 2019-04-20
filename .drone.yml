@@ -19,3 +19,14 @@ pipeline:
       tags:
         - latest
 
+  deploy:
+      image: appleboy/drone-ssh
+      host: dwit.dns05.com
+      username: root
+      port: 22
+      secrets: [ ssh_key ]
+      script:
+        - cd /root/app
+        - docker-compose pull nginx
+        - docker-compose up
+
