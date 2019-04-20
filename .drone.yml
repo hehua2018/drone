@@ -14,10 +14,10 @@ pipeline:
 
   publish:
       image: plugins/docker
-      registry: https://index.docker.io/v1/ # 仓库
-      repo: hexiaoshi520/golang_base # docker仓库地址
+      registry: https://index.docker.io/v1/ 
+      repo: hexiaoshi520/golang_base 
       secrets: [ docker_username, docker_password ]
-      tags: ${DRONE_COMMIT_BRANCH}
+      tags: ${DRONE_TAG}
 
   deploy:
       image: appleboy/drone-ssh
