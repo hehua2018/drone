@@ -19,7 +19,8 @@ pipeline:
       secrets: [ docker_username, docker_password ]
       tags: ${DRONE_TAG}
       when:
-        event: tag
+        event: 
+          - tag
 
 
   deploy:
