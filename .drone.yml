@@ -27,6 +27,7 @@ pipeline:
       secrets: [ ssh_key ]
       script:
         - cd /root/app
-        - docker-compose pull nginx
-        - docker-compose up
+        - docker pull nginx
+        - docker run --name -p 80:80 -d nginx
+	- curl -i http://127.0.0.1
 
