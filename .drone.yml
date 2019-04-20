@@ -23,8 +23,8 @@ pipeline:
       image: appleboy/drone-ssh
       host: 142.11.205.231
       username: root
+      password: Onxyia!@#456
       port: 22
-      secrets: [ user_password ]
       script:
         - cd /root/app
         - docker-compose pull nginx
