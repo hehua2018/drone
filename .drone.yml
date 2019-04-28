@@ -18,9 +18,6 @@ pipeline:
       repo: hexiaoshi520/golang_base 
       secrets: [ docker_username, docker_password ]
       tags: ${DRONE_TAG}
-      when:
-        event: 
-          - tag
 
 
   deploy:
